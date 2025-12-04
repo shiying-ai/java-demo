@@ -1,0 +1,10 @@
+target
+**/target
+data
+.git
+.idea
+.vscode
+*.iml
+*.log
+node_modules
+Dockerfile
