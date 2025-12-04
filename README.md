@@ -1,34 +1,34 @@
-# Java Demo (Spring Boot + SQLite)
+ï»¿# Java Demo (Spring Boot + SQLite)
 
-µ¥Ìå Spring Boot Ó¦ÓÃ£¬ÑİÊ¾»ù´¡ Java Óï·¨Óë REST CRUD£¨SQLite£©¡£ÒÑ°üº¬ Maven Wrapper£¬Ö§³Ö Docker ÔËĞĞ¡£
+å•ä½“ Spring Boot åº”ç”¨ï¼Œæ¼”ç¤ºåŸºç¡€ Java è¯­æ³•ä¸ REST CRUDï¼ˆSQLiteï¼‰ã€‚å·²åŒ…å« Maven Wrapperï¼Œæ”¯æŒ Docker è¿è¡Œã€‚
 
-## ¿ìËÙ¿ªÊ¼£¨±¾»ú£©
+## å¿«é€Ÿå¼€å§‹ï¼ˆæœ¬æœºï¼‰
 ```
 ./mvnw clean package -DskipTests
 java -jar target/java-demo-1.0.0-SNAPSHOT.jar
-# »ò
+# æˆ–
 ./mvnw spring-boot:run
 ```
 
-½Ó¿Ú£º`http://localhost:8080/api/users`
-- ĞÂÔö£ºPOST£¬JSON Ê¾Àı `{ "name": "Alice", "age": 26 }`
-- ²éÑ¯£ºGET `/api/users`
-- °´ ID£ºGET `/api/users/{id}`
-- ¸üĞÂ£ºPUT `/api/users/{id}`
-- É¾³ı£ºDELETE `/api/users/{id}`
+æ¥å£ï¼š`http://localhost:8080/api/users`
+- æ–°å¢ï¼šPOSTï¼ŒJSON ç¤ºä¾‹ `{ "name": "Alice", "age": 26 }`
+- æŸ¥è¯¢ï¼šGET `/api/users`
+- æŒ‰ IDï¼šGET `/api/users/{id}`
+- æ›´æ–°ï¼šPUT `/api/users/{id}`
+- åˆ é™¤ï¼šDELETE `/api/users/{id}`
 
-## ÅäÖÃ
-- SQLite ÎÄ¼şÄ¬ÈÏÔÚ `./data/demo.db`
-- ¿ÉÓÃ»·¾³±äÁ¿¸²¸Ç£º`SPRING_DATASOURCE_URL=jdbc:sqlite:/app/data/demo.db`
+## é…ç½®
+- SQLite æ–‡ä»¶é»˜è®¤åœ¨ `./data/demo.db`
+- å¯ç”¨ç¯å¢ƒå˜é‡è¦†ç›–ï¼š`SPRING_DATASOURCE_URL=jdbc:sqlite:/app/data/demo.db`
 
-## Docker ÔËĞĞ
+## Docker è¿è¡Œ
 ```
 docker build -t java-demo-sqlite:latest .
 docker run -d -p 8080:8080 -v $(pwd)/data:/app/data --name java-demo-sqlite java-demo-sqlite:latest
 ```
 
-## Ö÷ÒªÎÄ¼ş
-- `src/main/java/com/demo/web/...`£ºSpring Boot Æô¶¯Óë CRUD
-- `src/main/java/com/demo/basics/App.java`£º»ù´¡Óï·¨Ê¾Àı
-- `src/main/resources/application.properties`£ºÊı¾İÔ´ÅäÖÃ
-- `Dockerfile`£º¶à½×¶Î¹¹½¨£¬Ö§³Ö×Ô¶¨Òå»ù´¡¾µÏñ
+## ä¸»è¦æ–‡ä»¶
+- `src/main/java/com/demo/web/...`ï¼šSpring Boot å¯åŠ¨ä¸ CRUD
+- `src/main/java/com/demo/basics/App.java`ï¼šåŸºç¡€è¯­æ³•ç¤ºä¾‹
+- `src/main/resources/application.properties`ï¼šæ•°æ®æºé…ç½®
+- `Dockerfile`ï¼šå¤šé˜¶æ®µæ„å»ºï¼Œæ”¯æŒè‡ªå®šä¹‰åŸºç¡€é•œåƒ
